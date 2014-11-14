@@ -1,0 +1,3 @@
+[submodule "src/GGG/Bundle/BpmnBundle"]
+	path = src/GGG/Bundle/BpmnBundle
+	url = https://petertilsen@bitbucket.org/petertilsen/bpmnbundle.git
