@@ -18,6 +18,15 @@
             "homepage": "http://github.com/Sylius/Sylius/contributors"
         }
     ],
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "file:///data/sylius/src/GGG/Bundle/ODataBundle/"
+        }
+    ],
+
+
     "require": {
         "php":                                  ">=5.3.3",
 
@@ -161,18 +170,5 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         }
-    },
-
-
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "src/GGG/Bundle/BpmnBundle"
-        },
-        {
-            "type": "vcs",
-            "url": "src/GGG/Bundle/ODataBundle"
-        }
-    ]
-
+    }
 }
