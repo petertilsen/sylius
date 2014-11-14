@@ -25,6 +25,9 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // Put here your own bundles!
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new \GGG\Bundle\BpmnBundle\GGGBpmnBundle(),
+            new \GGG\Bundle\ODataBundle\GGGODataBundle(),
         );
 
         return array_merge(parent::registerBundles(), $bundles);

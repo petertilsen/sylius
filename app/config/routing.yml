@@ -59,6 +59,13 @@ hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix: /login
 
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
+GGGBpmnBundle:
+    resource: "@GGGBpmnBundle/Resources/config/routing.yml"
+
 amazon_login:
     path: /login/check-amazon
 
