@@ -23,15 +23,15 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
  *
  * @author Peter Tilsen <peter.tilsen@glassesgroupglobal.my>
  */
-class SyliusWebExtension extends AbstractResourceExtension implements PrependExtensionInterface
+class GGGBpmnExtension extends AbstractResourceExtension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        #$loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        #$loader->load('services.xml');
     }
 
 
@@ -43,6 +43,8 @@ class SyliusWebExtension extends AbstractResourceExtension implements PrependExt
      */
     public function prepend(ContainerBuilder $container)
     {
+        return;
+
         if (!$container->hasExtension('fos_oauth_server')) {
             throw new ServiceNotFoundException('FOSOAuthServerBundle must be registered in kernel.');
         }

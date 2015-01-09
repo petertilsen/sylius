@@ -10,3 +10,9 @@ ggg_bpmn_history_get:
     requirements:
         _method: GET
         id: "\d+"
+
+ggg_bpmn_odata:
+    pattern:  /bpmnodata
+    defaults: { _controller: GGGBpmnBundle:Bpmn:odata, _format: ~ }
+    requirements:
+        _method: GET

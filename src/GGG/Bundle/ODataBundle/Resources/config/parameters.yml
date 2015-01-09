@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    odata:
+        uri: http://services.odata.org/Northwind/Northwind.svc #data service Uri
+        metadata: #service metadata file
+        out: src/GGG/Bundle/ODataBundle/Model/Entities.php #output file path
+        auth: #windows|acs
+        u: #username
+        p: #password
+        sn: #servicenamespace
+        at: #applies_to
+        ph: #proxy-host
+        pp: #proxy-port
+        pu: #proxy-user
+        ppwd: #proxy-password
+        ups: #yes|no

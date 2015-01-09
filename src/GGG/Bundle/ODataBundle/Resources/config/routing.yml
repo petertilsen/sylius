@@ -1,0 +1,5 @@
+ggg_odata_index:
+    pattern:  /odata
+    defaults: { _controller: GGGODataBundle:OData:index, _format: ~ }
+    requirements:
+        _method: GET

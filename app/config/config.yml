@@ -5,6 +5,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: @SyliusCoreBundle/Resources/config/app/main.yml }
+    - { resource: @GGGBpmnBundle/Resources/config/app/bpmn.yml }
 
 framework:
     translator:      { fallback: %sylius.locale% }
@@ -55,7 +56,8 @@ doctrine:
                 mappings:
                     GGGBpmnBundle:
                       type: xml
-                      prefix: GGG\Bundle\BpmnBundle\Entity
+                      prefix: GGG\Bundle\BpmnBundle\Model
+
                     gedmo_loggable:
                         type: annotation
                         prefix: Gedmo\Loggable\Entity

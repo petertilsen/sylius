@@ -25,10 +25,8 @@
 namespace GGG\Bundle\BpmnBundle\Controller;
 
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-
 use FOS\RestBundle\Controller\FOSRestController;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class HistoryController extends FOSRestController
 {
@@ -46,6 +44,7 @@ class HistoryController extends FOSRestController
      */
     public function allAction()
     {
+        #$this->getDoctrine()->getRepository('GGGODataBundle:Entities')->getEntities();
         $history = array('history1', 'history2');
         $view = $this->view($history);
         $view->setFormat('json');

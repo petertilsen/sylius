@@ -21,13 +21,28 @@
 
     "repositories": [
         {
-            "type": "vcs",
-            "url": "file:///data/sylius/src/GGG/Bundle/ODataBundle/"
+            "type": "package",
+            "package": {
+                "name": "xrowgmbh/OData_PHP_SDK",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/xrowgmbh/OData_PHP_SDK",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "classmap": [
+                        "framework/"
+                    ]
+                }
+            }
+
         }
     ],
 
-
     "require": {
+        "xrowgmbh/OData_PHP_SDK":               "*@dev",
+
         "php":                                  ">=5.3.3",
 
         "doctrine/doctrine-bundle":             "~1.3@dev",
@@ -68,9 +83,8 @@
         "winzou/state-machine-bundle":          "~0.2",
         "willdurand/hateoas-bundle":            "1.0.*@dev",
         "friendsofsymfony/oauth-server-bundle": "dev-master",
-        "nelmio/api-doc-bundle":                "2.7.x-dev",
-        "ggg/bpmn-bundle":                      "dev-local",
-        "ggg/odata-bundle":                     "dev-local"
+        "nelmio/api-doc-bundle":                "2.7.x-dev"
+
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "~2.2",
@@ -137,6 +151,16 @@
         "sylius/variation-bundle": "self.version",
         "sylius/web-bundle": "self.version"
     },
+    "autoload": {
+        "psr-0": {
+            "Sylius\\": "src/",
+            "GGG\\": "src/"
+        },
+        "classmap": [
+            "vendor/xrowgmbh/OData_PHP_SDK/framework"
+        ]
+    },
+
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -144,7 +168,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate"
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
+            "GGG\\Bundle\\ODataBundle\\Composer\\ScriptHandler::buildEntity"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -152,12 +177,11 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate"
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
+            "GGG\\Bundle\\ODataBundle\\Composer\\ScriptHandler::buildEntity"
         ]
     },
-    "autoload": {
-        "psr-0": { "Sylius\\": "src/" }
-    },
+
     "config": {
         "bin-dir": "bin"
     },
@@ -169,6 +193,10 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
+        },
+        "odata-parameters": {
+            "parameter-key": "parameters",
+            "file": "src/GGG/Bundle/ODataBundle/Resources/config/parameters.yml"
         }
     }
 }
